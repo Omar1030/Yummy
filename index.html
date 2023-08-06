@@ -38,7 +38,7 @@
     <!-- ======= End Up Button ======= -->
 
     <!-- ======= Start Navbar ======= -->
-    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg bg-white fixed-top">
         <div class="container-fluid">
             <h1 class="navbar-brand first-font fw-bold fs-3 ms-md-4" href="#">Yummy :)</h1>
             <button class="book-btn border border-0 rounded-pill text-white fw-medium second-font">Book a Table</button>
@@ -71,7 +71,26 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <!-- ======= End Navbar ======= -->
+
+    <!-- ======= Start Navbar ======= -->
+    <div class="navbar position-fixed top-0 start-0 bg-white w-100 p-0 py-3">
+        <div class="container">
+            <h1 class="logo m-0">Yummy</h1>
+            <ul class="list-unstyled d-flex align-items-center m-0 d-none d-xl-flex">
+                <li>Home</li>
+                <li>About</li>
+                <li>Menu</li>
+                <li>Events</li>
+                <li>Chefs</li>
+                <li>Gallary</li>
+                <li>Contact</li>
+            </ul>
+            <button class="book-btn border border-0 rounded-pill text-white fw-medium second-font">Book a Table</button>
+            <i class="fa-solid fa-bars m-0 p-0 d-flex d-xl-none"></i>
+        </div>
+    </div>
     <!-- ======= End Navbar ======= -->
 
     <!-- ======= Start Landing Page ======= -->
@@ -556,8 +575,22 @@
                 <span class="second-font">GALLERY</span>
                 <h1 class="third-font">Check <span>Our Gallery</span></h1>
             </div>
-            <div class="img-gallery">
-                <div class="row gy-2">
+            <div class="img-gallery position-relative mx-auto">
+                <img src="Images/gallery/gallery-1.jpg" alt="" data-index="1" class="w-100 h-100">
+                <img src="Images/gallery/gallery-2.jpg" alt="" data-index="2" class="w-100 h-100">
+                <img src="Images/gallery/gallery-3.jpg" alt="" data-index="3" class="w-100 h-100">
+                <img src="Images/gallery/gallery-4.jpg" alt="" data-index="4" class="w-100 h-100">
+                <img src="Images/gallery/gallery-5.jpg" alt="" data-index="5" class="w-100 h-100">
+                <img src="Images/gallery/gallery-6.jpg" alt="" data-index="6" class="w-100 h-100">
+            </div>
+            <div class="img-controls mx-auto d-flex align-items-center justify-content-between">
+                <span class="prev text-white text-center p-1 fw-semibold">Previous</span>
+                <span class="bullets">
+                    <ul class="list-unstyled d-flex m-0"></ul>
+                </span>
+                <span class="next text-white text-center p-1 fw-semibold">Next</span>
+            </div>
+                <!-- <div class="row gy-2">
                     <div class="col-md-4 col-lg-2">
                         <div class="img-holder">
                             <img src="Images/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -588,7 +621,7 @@
                             <img src="Images/gallery/gallery-6.jpg" alt="" class="img-fluid">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
