@@ -1,3 +1,14 @@
+// Function to scroll to someWhere 
+function scrollToSomeWhere(element) {
+    element.forEach(ele => {
+        ele.addEventListener("click", (e) => {
+            document.querySelector(`#${e.target.textContent.toLowerCase()}`).scrollIntoView({behavior: "smooth"});
+        })
+    })
+}
+
+// -------------------------------------------------- // 
+
 // Up Button : Scroll to up
 let up = document.querySelector(".up");
 
@@ -12,6 +23,66 @@ window.addEventListener("scroll", () => {
 up.addEventListener("click", () => {
     window.scrollTo({top: 0, behavior: "smooth"})
 })
+
+// -------------------------------------------------- // 
+
+// Navbar : Create menu 
+let mainNavItems = document.querySelectorAll(".navbar ul li");
+scrollToSomeWhere(mainNavItems)
+
+let barIcon = document.getElementById("bar-icon");
+barIcon.addEventListener("click", createMenu);
+
+
+function createMenu() {
+
+    /* Create Overlay */
+    let navOverlay = document.createElement("div");
+    navOverlay.className = "navOverlay";
+    navOverlay.style.cssText = "position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; background-color: white; opacity: 0.5; z-index: 1000;";
+    document.body.appendChild(navOverlay);
+    
+    /* Create Menu */
+    let navMenu = document.createElement("div");
+    navMenu.className = ("navMenu");
+    navMenu.style.cssText = "position: fixed; right: 0px; top: 0px; width: 250px; height: 100%; background-color: white; z-index: 1001;";
+    document.body.appendChild(navMenu);
+
+    /* Close Button */
+    let closeBtn = document.createElement("div");
+    closeBtn.className = ("close");
+    closeBtn.textContent = "X"
+    closeBtn.style.cssText = "width: fill-content; text-align: right; padding: 10px 20px; font-size: 25px; cursor: pointer;";
+    navMenu.appendChild(closeBtn);
+
+    /* Handle click on close button */
+    closeBtn.addEventListener("click", () => {
+        navMenu.style.display = "none";
+        navOverlay.style.display = "none";
+    })
+
+    /* Ul for items of menu */
+    let ulMenu = document.createElement("ul");
+    ulMenu.className = ("ulMenu");
+    ulMenu.style.cssText = "list-style: none; margin: 10px 20px; padding: 0px";
+    navMenu.appendChild(ulMenu);
+
+    /* Li items in ul */
+    let textLi = ["Home", "About", "Menu", "Events", "Chefs", "Gallery", "Contact"];
+
+    for (let i = 0; i < 7; i++) {
+        let li = document.createElement("li");
+        li.className = "liItem";
+        li.classList.add("first-font");
+        li.textContent = textLi[i];
+        li.style.cssText = "font-weight: 600; padding: 10px 0px; cursor: pointer; width: fit-content;";
+        ulMenu.appendChild(li);
+    }
+
+    let liItems = document.querySelectorAll(".ulMenu .liItem");
+    scrollToSomeWhere(liItems);
+    
+}
 
 // -------------------------------------------------- // 
 
@@ -97,20 +168,20 @@ function addActive() {
             bullet.classList.add("active");
         }
     })
-
+    
     imgs.forEach(img => {
         img.classList.remove("active");
         if (img.dataset.index == currentSlide) {
             img.classList.add("active");
         }
     })
-
+    
     if (currentSlide == numOfSlides) {
         nextBtn.classList.add("disable");
     } else {
         nextBtn.classList.remove("disable")
     }
-
+    
     if (currentSlide == 1) {
         prevBtn.classList.add("disable");
     } else {
@@ -137,18 +208,6 @@ function prevSlide() {
         currentSlide--;
         addActive();
     }
-}
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// -------------------------------------------------- // 

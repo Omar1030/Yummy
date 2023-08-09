@@ -66,7 +66,7 @@
 .show {
     right: 15px;
 }
-.up svg{
+.up i {
     font-size: 19px;
 }
 /* End Up Button */
@@ -124,17 +124,48 @@
 
 /* Strat Navbar */
 .navbar {
-    z-index: 1000;
+    z-index: 1001;
 }
 .navbar button {
     padding: 8px 20px;
 }
 .navbar ul li {
     margin: 0px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #7f7f90;
+    transition: var(--main-transition);
+    cursor: pointer;
+    position: relative;
 }
-.navbar svg {
+.navbar ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-primary);
+    width: 0%;
+    height: 2px;
+    transition: var(--main-transition);
+}
+.active {
+    color: red;
+}
+.navbar ul li:hover,
+.navbar ul li.active {
+    color: black;
+}
+.navbar ul li:hover::after,
+.navbar ul li.active::after {
+    width: 100%;
+}
+
+.navbar i {
     font-size: 25px;
+    cursor: pointer;
 }
+
 /* End Navbar */
 
 /* Start Landing Page */
@@ -153,7 +184,7 @@
 .landing .row .btns button:hover {
     box-shadow: 0px 0px 7px 0px var(--color-primary);
 }
-.landing .row .btns svg {
+.landing .row .btns i {
     font-size: 32px;
     color: var(--color-primary);
 }
@@ -228,7 +259,7 @@
     border-radius: 50%;
     background-color: rgba(206, 18, 18, 0.1);
 }
-.why-us .icon svg {
+.why-us .icon i {
     color: var(--color-primary);
     font-size: 32px;
 }
@@ -334,7 +365,7 @@
     line-height: 1.8;
     font-style: italic;
 }
-.testimonials .text p svg {
+.testimonials .text p i {
     font-size: 20px;
     color: var(--color-primary);
 }
@@ -435,11 +466,11 @@
     margin: 9px 0px;
     color: rgba(55, 55, 63, 0.4);
 }
-.chefs .data-chef ul li svg {
+.chefs .data-chef ul li i {
     font-size: 20px;
     transition: var(--main-transition);
 }
-.chefs .data-chef ul li svg:hover {
+.chefs .data-chef ul li i:hover {
     color: black;
     cursor: pointer;
 }
@@ -551,6 +582,7 @@
     margin: 0px 10px;
     font-weight: 500;
     cursor: pointer;
+
 }
 @media (max-width: 768px) {
     .gallery .img-controls .bullets ul li {
@@ -606,7 +638,7 @@
     border-radius: 50%;
     background-color: var(--color-primary);
 }
-.contact .contact-data .icon svg {
+.contact .contact-data .icon i {
     font-size: 24px;
 }
 .contact .contact-data .holder .data h3 {
@@ -650,7 +682,7 @@
 .footer .container .row {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.footer .icon svg {
+.footer .icon i {
     font-size: 24px;
     color: #eeeeeed1;
 }
