@@ -84,7 +84,7 @@ function createMenu() {
     
 }
 
-// -------------------------------------------------- // 
+// -------------------------------------------------- //
 
 // Stats Counter : Create Counter
 let sectionCounter = document.querySelector(".stats-counter");
@@ -114,7 +114,7 @@ function increaseCount(span) {
 
 // -------------------------------------------------- // 
 
-// Menu Section : Selected Type Of Food
+// Menu : Selected Type Of Food
 let foodType = document.querySelectorAll(".menu .items li");
 let type = document.querySelector(".menu .selected .type");
 
@@ -126,88 +126,155 @@ foodType.forEach(ele => {
 
 // -------------------------------------------------- // 
 
-// Gallary Section : Img slider
-let imgs = Array.from(document.querySelectorAll(".gallery .img-gallery img"));
-let ulBullets = document.querySelector(".img-controls .bullets ul");
-let nextBtn = document.querySelector(".img-controls .next");
-let prevBtn = document.querySelector(".img-controls .prev");
-
-let numOfSlides = imgs.length;
-let currentSlide = 1;
-
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
-
-/* Create Bullets */
-for (let i = 1; i <= numOfSlides; i++) {
-    let bulletItem = document.createElement("li");
-    bulletItem.className = "bullet-item";
-    bulletItem.setAttribute("index-bullet", i);
-    bulletItem.appendChild(document.createTextNode(i));
-    ulBullets.appendChild(bulletItem);
-};
-
-let ulBulletsItems = Array.from(document.querySelectorAll(".img-controls .bullets ul .bullet-item"));
-
-/* Click on button to change slide */
-ulBulletsItems.forEach(ele => {
-    ele.addEventListener("click", () => {
-        currentSlide = parseInt(ele.getAttribute("index-bullet"));
-        addActive()
-    })
-})
-
-addActive();
-
-/* Add class active to current bullet */
-function addActive() {
-
-    ulBulletsItems.forEach(bullet => {
-        bullet.classList.remove("active");
-        if (bullet.getAttribute("index-bullet") == currentSlide) {
-            bullet.classList.add("active");
-        }
-    })
-    
-    imgs.forEach(img => {
-        img.classList.remove("active");
-        if (img.dataset.index == currentSlide) {
-            img.classList.add("active");
-        }
-    })
-    
-    if (currentSlide == numOfSlides) {
-        nextBtn.classList.add("disable");
-    } else {
-        nextBtn.classList.remove("disable")
+// Testimonials : Create slider
+var swiper = new Swiper(".testimonials .mySwiper", {
+    spaceBetween: 5,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     }
-    
-    if (currentSlide == 1) {
-        prevBtn.classList.add("disable");
-    } else {
-        prevBtn.classList.remove("disable")
-    }
-    
-}
-
-
-/* Change the slide from next & previous buttons */
-function nextSlide() {
-    if (nextBtn.classList.contains("disable")) {
-        return false;
-    } else {
-        currentSlide++;
-        addActive();
-    }
-}
-
-function prevSlide() {
-    if (prevBtn.classList.contains("disable")) {
-        return false;
-    } else {
-        currentSlide--;
-        addActive();
-    }
-};
+});
 
 // -------------------------------------------------- // 
+
+// Events : Create slider
+var swiper = new Swiper(".events .mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+    }
+});
+
+// -------------------------------------------------- // 
+
+// Gallary Section : Img slider
+// let imgs = Array.from(document.querySelectorAll(".gallery .img-gallery img"));
+// let ulBullets = document.querySelector(".img-controls .bullets ul");
+// let nextBtn = document.querySelector(".img-controls .next");
+// let prevBtn = document.querySelector(".img-controls .prev");
+
+// let numOfSlides = imgs.length;
+// let currentSlide = 1;
+
+// nextBtn.addEventListener("click", nextSlide);
+// prevBtn.addEventListener("click", prevSlide);
+
+// /* Create Bullets */
+// for (let i = 1; i <= numOfSlides; i++) {
+//     let bulletItem = document.createElement("li");
+//     bulletItem.className = "bullet-item";
+//     bulletItem.setAttribute("index-bullet", i);
+//     bulletItem.appendChild(document.createTextNode(i));
+//     ulBullets.appendChild(bulletItem);
+// };
+
+// let ulBulletsItems = Array.from(document.querySelectorAll(".img-controls .bullets ul .bullet-item"));
+
+// /* Click on button to change slide */
+// ulBulletsItems.forEach(ele => {
+//     ele.addEventListener("click", () => {
+//         currentSlide = parseInt(ele.getAttribute("index-bullet"));
+//         addActive()
+//     })
+// })
+
+// addActive();
+
+// /* Add class active to current bullet */
+// function addActive() {
+
+//     ulBulletsItems.forEach(bullet => {
+//         bullet.classList.remove("active");
+//         if (bullet.getAttribute("index-bullet") == currentSlide) {
+//             bullet.classList.add("active");
+//         }
+//     })
+    
+//     imgs.forEach(img => {
+//         img.classList.remove("active");
+//         if (img.dataset.index == currentSlide) {
+//             img.classList.add("active");
+//         }
+//     })
+    
+//     if (currentSlide == numOfSlides) {
+//         nextBtn.classList.add("disable");
+//     } else {
+//         nextBtn.classList.remove("disable")
+//     }
+    
+//     if (currentSlide == 1) {
+//         prevBtn.classList.add("disable");
+//     } else {
+//         prevBtn.classList.remove("disable")
+//     }
+    
+// }
+
+
+// /* Change the slide from next & previous buttons */
+// function nextSlide() {
+//     if (nextBtn.classList.contains("disable")) {
+//         return false;
+//     } else {
+//         currentSlide++;
+//         addActive();
+//     }
+// }
+
+// function prevSlide() {
+//     if (prevBtn.classList.contains("disable")) {
+//         return false;
+//     } else {
+//         currentSlide--;
+//         addActive();
+//     }
+// };
+
+// -------------------------------------------------- // 
+
+// Gallary : Create Slider
+var swiper = new Swiper(".gallery .mySwiper", {
+    spaceBetween: 5,
+    centeredSlides: false,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 10
+        },
+        992: {
+            slidesPerView: 5,
+            spaceBetween: 40
+        }
+    }
+});
+
+// -------------------------------------------------- // 
+
