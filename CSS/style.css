@@ -13,7 +13,7 @@
     /* --- Transition --- */
     --transition: 0.3s;
     /* --- Padding --- */
-    --section-padding: 60px;
+    --section-padding: 70px;
 }
 
 /* ===== End Variables ===== */
@@ -61,6 +61,30 @@ fieldset {
 
 .main-btn:hover {
     cursor: pointer;
+}
+
+.section-header {
+    font-family: var(--third-font);
+    text-align: center;
+    font-weight: 500;
+    font-size: 50px;
+    position: relative;
+}
+
+.section-header span {
+    color: var(--main-color);
+}
+
+.section-header::before {
+    content: "About Us";
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-family: var(--second-font);
+    font-weight: 100;
+    color: #212529;
 }
 
 /* ===== End Global Rules ===== */
@@ -215,3 +239,22 @@ fieldset {
 }
 
 /* ===== End Hero ===== */
+
+
+/* ===== Start About Us ===== */
+
+#about {
+    padding: var(--section-padding) 0;
+}
+
+#about #about-container {
+
+
+}
+
+#about #about-container #about-img {
+    
+}
+
+
+/* ===== End About Us ===== */
