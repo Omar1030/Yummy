@@ -68,6 +68,7 @@ fieldset {
     text-align: center;
     font-weight: 500;
     font-size: 50px;
+    margin-bottom: 100px;
     position: relative;
 }
 
@@ -244,17 +245,71 @@ fieldset {
 /* ===== Start About Us ===== */
 
 #about {
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 100px;
 }
 
-#about #about-container {
 
-
+#about #about-container #about-img {
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 #about #about-container #about-img {
-    
+    background-image: url(/imgs/about.jpg);
+    background-size: cover;
+    background-position: left;
+    min-height: 600px;
 }
 
+#about #about-container #about-info {
+    flex-basis: 50%;
+    flex-shrink: 1;
+    /* background-color: red; */
+}
 
+#about p {
+    line-height: 25px;
+}
+
+#about #about-container #about-info > p:first-of-type {
+    font-style: italic;
+}
+
+#about #about-container #about-info ul {
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+#about #about-container #about-info ul li {
+    display: flex;
+}
+
+#about #about-container #about-info ul li:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+#about #about-container #about-info ul li .icon {
+    color: var(--main-color);
+    margin-right: 10px;
+}
+
+#about #about-container #about-info > p:last-of-type  {
+    margin-bottom: 20px;
+}
+
+#about #about-container #about-info img {
+    max-width: 100%;
+}
+
+@media (min-width: 1200) {
+
+    #about-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        /* background-color: red; */
+    }
+
+}
 /* ===== End About Us ===== */
